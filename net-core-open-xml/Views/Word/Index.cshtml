@@ -1,0 +1,97 @@
+﻿@model net_core_open_xml.Models.Word
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<div>
+    @using (Html.BeginForm("EditWord", "Word", FormMethod.Post))
+    {
+        <form>
+            <div class="row">
+                <div class="col-md-6 float-left">
+                    <div class="form-group">
+                        <label>First Name</label>
+                        @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="col-md-6 float-lg-right">
+                    <div class="form-group">
+                        <label>Last Name</label>
+                        @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="col-md-6 float-left">
+                    <div class="form-group">
+                        <label>Place of Birth</label>
+                        @Html.TextBoxFor(m => m.PlaceofBirth, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="col-md-6 float-lg-right">
+                    <div class="form-group">
+                        <label>Date of Birth</label>
+                        @Html.TextBoxFor(m => m.DateofBirth, new { @class = "form-control", type = "date" })
+                    </div>
+                </div>
+                <div class="col-md-6 float-left">
+                    <div class="form-group">
+                        <label>Job Title</label>
+                        @Html.TextBoxFor(m => m.JobTitle, new { @class = "form-control", placeholder = "e.g. Teacher" })
+                    </div>
+                </div>
+                <div class="col-md-6 float-left">
+                    <div class="form-group">
+                        <label>Email</label>
+                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="col-md-6 float-lg-right">
+                    <div class="form-group">
+                        <label>Phone</label>
+                        @Html.TextBoxFor(m => m.Phone, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="col-md-6 float-left">
+                    <div class="form-group">
+                        <label>Address</label>
+                        @Html.TextBoxFor(m => m.Address, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="col-md-6 float-lg-right">
+                    <div class="form-group">
+                        <label>Postal Code</label>
+                        @Html.TextBoxFor(m => m.PostalCode, new { @class = "form-control", type = "number" })
+                    </div>
+                </div>
+                <div class="col-md-6 float-left">
+                    <div class="form-group">
+                        <label>Country</label>
+                        @Html.TextBoxFor(m => m.Country, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="col-md-6 float-lg-right">
+                    <div class="form-group">
+                        <label>City</label>
+                        @Html.TextBoxFor(m => m.City, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="col-md-6 float-lg-right">
+                    <div class="form-group">
+                        <label>Nationality</label>
+                        @Html.TextBoxFor(m => m.Nationality, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <label>Professional Summary</label>
+                    @Html.TextAreaFor(m => m.ProfessionalSummary, new { @class = "form-control" })
+                </div>
+                <div class="col-lg-12" style="margin-top: 20px">
+                    <input type="button" class="btn btn-info" value="Generate Word" onclick="location.href='@Url.Action("GenerateWord", "Word")'" />
+                    <button type="submit" class="btn btn-primary">Edit Word</button>
+                </div>
+            </div>
+        </form>
+    }
+</div>
